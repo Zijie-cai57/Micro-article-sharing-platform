@@ -1,7 +1,7 @@
 <template>
   <div class="category-page">
-    <h1>做菜推荐</h1>
-    <p>为年轻人推荐简单又美味的健康食谱。</p>
+    <h1>休闲娱乐</h1>
+    <p>阿发</p>
     
     <SearchBar @search="handleSearch" />
     
@@ -23,7 +23,7 @@
 import { ref, computed } from 'vue'
 import ArticleCard from '../components/ArticleCard.vue'
 import SearchBar from '../components/SearchBar.vue'
-import cookArticles from '../card_data/cook.js'
+import cookArticles from '../card_data/leisure.js'
 
 const searchQuery = ref('')
 const articles = ref(cookArticles)

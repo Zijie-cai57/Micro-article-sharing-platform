@@ -631,6 +631,11 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start; /* 顶部对齐，避免卡片高度不一致问题 */
+
+        /* 核心修改：改为垂直布局，确保标题在上方 */
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
     }
     .dark .desk {
         background-color: #3e1b03;

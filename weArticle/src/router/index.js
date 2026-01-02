@@ -4,17 +4,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'  // 首页
 import Animals from '../views/Animals.vue'  // 动物分类页
 import Travel from '../views/Travel.vue'  // 旅游分类页
-import Cook from '../views/Cook.vue'  // 做菜分类页
 import Health from '../views/Health.vue'  // 健康分类页
+import Cook from '../views/leisure.vue'  // 做菜分类页
 import About from '../views/About.vue'
 
 // 导入文章详情页组件（按需导入）
 import Animal1 from '../article-contents/animals/animal-1.vue'
 import Animal2 from '../article-contents/animals/animal-2.vue'
 import Animal3 from '../article-contents/animals/animal-3.vue'
-import Cook1 from '../article-contents/cook/cook-1.vue'
-import Cook2 from '../article-contents/cook/cook-2.vue'
-import Cook3 from '../article-contents/cook/cook-3.vue'
+import Animal4 from '../article-contents/animals/animal-4.vue'
 import Travel2 from '../article-contents/travel/travel-2.vue'
 import Travel3 from '../article-contents/travel/travel-3.vue'
 import Travel4 from '../article-contents/travel/travel-4.vue'
@@ -22,6 +20,11 @@ import Travel1 from '../article-contents/travel/travel-1.vue'
 import Health1 from '../article-contents/health/health-1.vue'
 import Health2 from '../article-contents/health/health-2.vue'
 import Health3 from '../article-contents/health/health-3.vue'
+import Health4 from '../article-contents/health/health-4.vue'
+import leisure1 from '../article-contents/leisure/leisure-1.vue'
+import leisure2 from '../article-contents/leisure/leisure-2.vue'
+import leisure3 from '../article-contents/leisure/leisure-3.vue'
+import leisure4 from '../article-contents/leisure/leisure-4.vue'
 
 
 
@@ -39,16 +42,19 @@ const routes = [
   { path: '/article/animal-1', component: Animal1 },
   { path: '/article/animal-2', component: Animal2 },
   { path: '/article/animal-3', component: Animal3 },
-  { path: '/article/cook-1', component: Cook1 },
-  { path: '/article/cook-2', component: Cook2 },
-  { path: '/article/cook-3', component: Cook3 },
+  { path: '/article/animal-4', component: Animal4 },
   { path: '/article/travel-1', component: Travel1 },
   { path: '/article/travel-2', component: Travel2 },
   { path: '/article/travel-3', component: Travel3 },
   { path: '/article/travel-4', component: Travel4 },
-  { path: '/atricle/health-1', component: Health1 },
-  { path: '/atricle/health-2', component: Health2 },
-  { path: '/atricle/health-3', component: Health3 },
+  { path: '/article/health-1', component: Health1 },
+  { path: '/article/health-2', component: Health2 },
+  { path: '/article/health-3', component: Health3 },
+  { path: '/article/health-4', component: Health4 },
+  { path: '/article/leisure-1', component: leisure1 },
+  { path: '/article/leisure-2', component: leisure2 },
+  { path: '/article/leisure-3', component: leisure3 },
+  { path: '/article/leisure-4', component: leisure4 },
   // 这里可继续添加其他文章的路由配置，结尾不要忘了','
 ]
 

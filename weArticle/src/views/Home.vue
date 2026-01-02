@@ -17,8 +17,8 @@
       <div class="category-buttons">
         <router-link to="/animals" class="category-btn">动物世界</router-link>
         <router-link to="/travel" class="category-btn">旅游攻略</router-link>
-        <router-link to="/cook" class="category-btn">做菜推荐</router-link>
         <router-link to="/health" class="category-btn">健康科普</router-link>
+        <router-link to="/cook" class="category-btn">休闲娱乐</router-link>
       </div>
       
     </div>
