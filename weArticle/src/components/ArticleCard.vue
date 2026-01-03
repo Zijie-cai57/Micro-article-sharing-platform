@@ -48,33 +48,44 @@ defineProps({
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
+  /* 亮色模式默认：红黄暖色调 */
   background-image: linear-gradient(163deg, #ff1900 0%, #ffbc05 100%);
   border: 1px solid #f0f0f0; 
 }
-.dark .article-card1 {
-  background-color: #101620;
-}
+
+/* --- Dark Mode 配色优化 --- */
 .dark .article-card {
-  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  /* 暗色模式：改为更有质感的 青-紫 渐变，不再是刺眼的亮绿 */
+  background-image: linear-gradient(163deg, #0073ff 0%, #ac3ad5 100%);
+  border: none; /* 暗色模式去掉白边框，靠渐变区分 */
 }
+
 .article-card1 {
   width: 100%;
   height: 100%;
-
   background-color: #ffffff;
   transition: all .2s;
 }
+
+/* 暗色模式：卡片内部背景改为深蓝灰，比纯黑更护眼 */
+.dark .article-card1 {
+  background-color: #1a1f2e; 
+}
+
 .article-card1:hover {
   transform: scale(0.98);
   border-radius: 10px;
 }
+
 /* 卡片鼠标悬停效果 */
 .article-card:hover {
   transform: translateY(-6px); 
   box-shadow: 0px 0px 30px 1px rgba(255, 123, 0, 0.3);
 }
+
 .dark .article-card:hover {
-  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+  /* 暗色悬停光晕：匹配新的青蓝色调 */
+  box-shadow: 0px 0px 30px 1px rgba(0, 210, 255, 0.3);
 }
 
 /* 图片容器：增加顶部圆角和间距 */
@@ -82,6 +93,10 @@ defineProps({
   border-radius: 3%;
   width: 100%;
   border: 1px solid #c5c2c2;
+}
+/* 暗色模式下图片边框调暗 */
+.dark .image-container {
+  border: 1px solid #333;
 }
 
 /* 封面图样式 */
@@ -131,12 +146,24 @@ defineProps({
   outline: 2px solid #70bdca;
   box-shadow: 4px 5px 17px -4px #268391;
 }
+
+/* 暗色模式标签优化 */
 .dark .tag {
-  background-color: #7fd3e2;
+  /* 背景变深，与卡片背景融合但有区分 */
+  background-color: rgba(44, 156, 175, 0.15); 
+  color: #4dd0e1; /* 文字变亮青色 */
+  outline: 1.5px solid #4dd0e1;
 }
 .dark .tag:before {
-  background-color: #075376;
+  /* 悬停时的填充色 */
+  background-color: #4dd0e1; 
 }
+.dark .tag:hover {
+  color: #000; /* 悬停后文字变黑以保证对比度 */
+  outline: 2px solid #4dd0e1;
+  box-shadow: 0 0 10px rgba(77, 208, 225, 0.4);
+}
+
 .tag::before {
   content: "";
   position: absolute;
@@ -160,21 +187,34 @@ defineProps({
   font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
-  display: -webkit-box; /* 标题超出2行省略 */
+  color: #333; /* 亮色默认 */
+  display: -webkit-box; 
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  transition: color 0.3s;
 }
 
-/* 文本样式，超出2行的内容省略 */
+/* 暗色模式标题 */
+.dark .card-title {
+  color: #e0e0e0; /* 灰白色，柔和不刺眼 */
+}
+
+/* 文本样式 */
 .card-desc {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+  color: #666; /* 亮色默认 */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  transition: color 0.3s;
 }
 
+/* 暗色模式描述文本 */
+.dark .card-desc {
+  color: #a0a0a0; /* 中灰色 */
+}
 </style>

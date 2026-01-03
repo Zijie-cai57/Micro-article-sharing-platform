@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'  // 首页
 import Animals from '../views/Animals.vue'  // 动物分类页
 import Travel from '../views/Travel.vue'  // 旅游分类页
 import Health from '../views/Health.vue'  // 健康分类页
-import Cook from '../views/leisure.vue'  // 做菜分类页
+import Leisure from '../views/Leisure.vue'  // 娱乐分类页
 import About from '../views/About.vue'
 
 // 导入文章详情页组件（按需导入）
@@ -35,7 +35,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/animals', component: Animals },
   { path: '/travel', component: Travel },
-  { path: '/cook', component: Cook },
+  { path: '/leisure', component: Leisure },
   { path: '/health', component: Health },
 
   // 路径对应文章id(就按照这个写法(如果要添加的话)，不要特立独行！！！)，组件对应具体详情页

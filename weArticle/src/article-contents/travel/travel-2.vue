@@ -14,7 +14,7 @@
             </div>
 
             <div class="nav-button-area">
-                <ThemeButton></ThemeButton>
+                <ThemeButton ref="themeBtnRef"></ThemeButton>
             </div>
         </div>
     </nav>
@@ -139,7 +139,8 @@
                         <h3>Kirkjufell</h3>
                         <span>教会山</span>
                         <p>《权力的游戏》取景地。经典的瀑布+尖顶山构图。</p>
-                        <a href="#" class="map-link">View Map ↗</a>
+                        <a href="https://map.baidu.com/search/%E5%86%B0%E5%B2%9B%E6%95%99%E4%BC%9A%E5%B1%B1%E5%9C%B0%E5%9B%BE/@-2594569.015,9553935.77,19z?querytype=s&wd=%E5%86%B0%E5%B2%9B%E6%95%99%E4%BC%9A%E5%B1%B1%E5%9C%B0%E5%9B%BE&c=332&provider=pc-aladin&pn=0&device_ratio=2&da_src=shareurl"
+                         target="_banket" class="map-link">View Map ↗</a>
                     </div>
                 </div>
 
@@ -151,7 +152,8 @@
                         <h3>Diamond Beach</h3>
                         <span>钻石沙滩</span>
                         <p>晶莹剔透的冰块散落在黑沙滩上，极光下的“碎钻”。</p>
-                        <a href="#" class="map-link">View Map ↗</a>
+                        <a href="https://map.baidu.com/search/%E5%86%B0%E5%B2%9B%E9%92%BB%E7%9F%B3%E6%B2%99%E6%BB%A9%E5%9C%B0%E5%9B%BE/@-1800952.99,9322239.705,19z?querytype=s&wd=%E5%86%B0%E5%B2%9B%E9%92%BB%E7%9F%B3%E6%B2%99%E6%BB%A9%E5%9C%B0%E5%9B%BE&c=332&provider=pc-aladin&pn=0&device_ratio=2&da_src=shareurl"
+                         target="_banket" class="map-link">View Map ↗</a>
                     </div>
                 </div>
 
@@ -163,7 +165,8 @@
                         <h3>Skógafoss</h3>
                         <span>斯科加瀑布</span>
                         <p>巨大的水幕。如果运气好，可以拍到极光下的双彩虹（月虹）。</p>
-                        <a href="#" class="map-link">View Map ↗</a>
+                        <a href="https://map.baidu.com/search/%E5%86%B0%E5%B2%9B%E6%96%AF%E7%A7%91%E5%8A%A0%E7%80%91%E5%B8%83%E5%9C%B0%E5%9B%BE/@-2172003.315,9193324.84,19z?querytype=s&wd=%E5%86%B0%E5%B2%9B%E6%96%AF%E7%A7%91%E5%8A%A0%E7%80%91%E5%B8%83%E5%9C%B0%E5%9B%BE&c=332&provider=pc-aladin&pn=0&device_ratio=2&da_src=shareurl"
+                         target="_banket" class="map-link">View Map ↗</a>
                     </div>
                 </div>
             </div>
@@ -188,9 +191,11 @@
 
 <script setup>
 import ThemeButton from '../../components/ThemeButton.vue'
+import { isDark } from '../../components/themeState.js' // 1. 引入全局状态
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
+const themeBtnRef = ref(null); // 2. 创建引用变量
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 50;
@@ -210,6 +215,13 @@ onMounted(() => {
             }
         });
     });
+
+    // --- 核心修改：如果是白天，自动触发点击 ---
+    if (!isDark.value) {
+        // 找到组件内的 input 元素并点击
+        // 这会触发 v-model 更新，也会触发 ThemeButton 内的 watch 从而播放动画
+        themeBtnRef.value?.$el.querySelector('input').click();
+    }
 });
 
 onUnmounted(() => {
@@ -416,6 +428,7 @@ onUnmounted(() => {
 .loc-card:hover .loc-bg img { transform: scale(1.1); }
 
 .loc-content {
+    box-sizing: border-box;
     position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem;
     background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
     color: #fff;

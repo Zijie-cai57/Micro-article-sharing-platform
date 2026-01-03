@@ -68,7 +68,7 @@
                     <div class="method-content">
                         <h3>20-20-20 法则</h3>
                         <p>这是美国视光协会 (AOA) 推荐的黄金法则：每用眼 <strong>20分钟</strong>，向 <strong>20英尺</strong> (约6米) 远处眺望，持续 <strong>20秒</strong>。这能有效放松睫状肌，防止痉挛。</p>
-                        <a href="https://baike.baidu.com/item/20-20-20%E6%8A%A4%E7%9C%BC%E6%B3%95%E5%88%99" target="_blank" class="source-badge">AOA 推荐标准</a>
+                        <a href="https://baike.baidu.com/item/%E2%80%9C20%E2%80%9420%E2%80%9420%E2%80%9D%E5%8F%A3%E8%AF%80/50064160?fromModule=search-result_lemma" target="_blank" class="source-badge">🔍 搜索：20-20-20护眼法则</a>
                     </div>
                 </div>
 
@@ -86,6 +86,7 @@
                     <div class="method-content">
                         <h3>热敷 SPAS</h3>
                         <p>睑板腺堵塞是干眼的主因。每天晚上使用 40℃-42℃ 的热毛巾或蒸汽眼罩热敷 10-15 分钟，可以融化睑板腺油脂，恢复泪膜稳定。</p>
+                        <a href="https://health.baidu.com/m/detail/ar_6143129731430695937" target="_blank" class="source-badge">🔍 搜索：眼部SPAS</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +94,7 @@
 
         <section id="quiz" class="section-block game-section">
             <div class="section-header">
-                <h2>视力智商测试</h2>
+                <h2>视力知识测试</h2>
                 <p>Match The Correct Solution</p>
             </div>
 

@@ -14,7 +14,7 @@
             </div>
 
             <div class="nav-button-area">
-                <ThemeButton></ThemeButton>
+                <ThemeButton ref="themeBtnRef"></ThemeButton>
             </div>
         </div>
     </nav>
@@ -185,15 +185,14 @@
 
 <script setup>
 import ThemeButton from '../../components/ThemeButton.vue'
+import { isDark } from '../../components/themeState.js' // 1. 引入全局状态
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
 const activeSection = ref('');
+const themeBtnRef = ref(null); // 2. 创建引用变量
 
-// 配置项：章节 ID 列表，方便维护
 const SECTIONS = ['structure', 'weapon', 'immortal', 'ecology'];
-
-// 优化点1：使用 requestAnimationFrame 进行滚动性能优化
 let ticking = false;
 
 const handleScroll = () => {
@@ -207,26 +206,21 @@ const handleScroll = () => {
 };
 
 const performScrollLogic = () => {
-    // 1. 导航栏背景变化
     isScrolled.value = window.scrollY > 50;
-
-    // 2. 目录高亮逻辑
     for (const section of SECTIONS) {
         const element = document.getElementById(section);
         if (element) {
             const rect = element.getBoundingClientRect();
-            // 判定范围：当章节顶部进入视口上方 100px 到下方 300px 之间时高亮
             if (rect.top >= -150 && rect.top <= 300) {
                 activeSection.value = section;
-                break; // 找到一个就停止，避免多个高亮
+                break;
             }
         }
     }
 };
 
 onMounted(() => {
-
-    // 平滑滚动到锚点
+    // 平滑滚动逻辑
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -241,20 +235,16 @@ onMounted(() => {
     });
     window.addEventListener('scroll', handleScroll);
     
-    // 核心需求：一进入就强制开启暗色模式
-    // 假设您的暗色模式是基于 'dark' 类名的 (Tailwind 或常见 Vue 方案)
-    if (!document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.add('dark');
-        // 这一步是为了让 ThemeButton 组件内部状态也同步（如果它依赖 class 变化）
-        // 如果您的 ThemeButton 不会自动同步，可能需要更暴力的解法，但通常这样就够了
+    // --- 核心修改：如果是白天，自动触发点击 ---
+    if (!isDark.value) {
+        // 找到组件内的 input 元素并点击
+        // 这会触发 v-model 更新，也会触发 ThemeButton 内的 watch 从而播放动画
+        themeBtnRef.value?.$el.querySelector('input').click();
     }
 });
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
-    // 可选：离开这个页面时，是否要恢复亮色模式？
-    // 如果不需要恢复（用户切了就切了），把下面这行注释掉即可
-    // document.documentElement.classList.remove('dark');
 });
 </script>
 
