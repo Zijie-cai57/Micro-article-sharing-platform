@@ -27,7 +27,7 @@
             <h1 class="splash-title">全城<br><span class="highlight">水战</span></h1>
             <p class="sub-title">Get Wet or Go Home | 全球最大的水仗节</p>
             <div class="scroll-down">
-                <span>4月13日 - 15日</span>
+                <span style="color: whitesmoke;font-size: larger;">4月13日 - 15日</span>
                 <div class="water-drop">💧</div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                     <img src="../../assets/image/travel/travel-4/thapae.jpg" alt="塔佩门" class="droplet-img">
                     <div class="droplet-content">
                         <h3>塔佩门</h3>
-                        <p>主舞台与选美大赛。人密度最高，消<br>防车直接喷水，完全没有干的地方。</p>
+                        <p>主舞台与选美大赛。人密度最高，消防车直接喷水，完全没有干的地方。</p>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     <img src="../../assets/image/travel/travel-4/moat.jpg" alt="护城河" class="droplet-img">
                     <div class="droplet-content">
                         <h3>护城河周边</h3>
-                        <p>皮卡车巡游路线。人们直接抽取护<br>城河的水互泼，也是“冰水<br>攻击”的高发区。</p>
+                        <p>皮卡车巡游路线。人们直接抽取护城河的水互泼，也是“冰水攻击”的高发区。</p>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
                     <img src="../../assets/image/travel/travel-4/maya.jpg" alt="MAYA商场" class="droplet-img">
                     <div class="droplet-content">
                         <h3>MAYA / 宁曼路</h3>
-                        <p>年轻人的电音派对。现代舞台、大<br>型水枪、泡沫派对，氛围更像夜店。</p>
+                        <p>年轻人的电音派对。现代舞台、大型水枪、泡沫派对，氛围更像夜店。</p>
                     </div>
                 </div>
             </div>
@@ -312,7 +312,8 @@ onUnmounted(() => {
 .shape-3 { border-radius: 36% 64% 48% 52% / 60% 39% 61% 40%; }
 .droplet-img { width: 100%; height: 100%; object-fit: cover; }
 .droplet-content {
-    position: absolute; top: 0; left: 0; width: 85%; height: 100%;
+    box-sizing: border-box;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.5); color: #fff;
     display: flex; flex-direction: column; 
     justify-content: center; 

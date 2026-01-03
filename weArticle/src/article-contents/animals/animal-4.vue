@@ -177,13 +177,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* 配色：
-   Sand Gold: #e1b16a (主色)
-   Earth Brown: #5d4037 (文字/深色)
-   Sunset Red: #d35400 (强调色)
-   Sky Blue: #87ceeb (辅助)
-*/
-
 :global(html) {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
@@ -196,7 +189,7 @@ onUnmounted(() => {
     background: transparent;
 }
 .nav-container.scrolled {
-    background: rgba(253, 24cf, 225, 0.95); /* 米黄色背景 */
+    background: rgba(253, 24cf, 225, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(141, 110, 99, 0.1);
     height: 4rem;
@@ -229,15 +222,6 @@ onUnmounted(() => {
     position: absolute; width: 100%; height: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(93, 64, 55, 0.6));
     z-index: 1;
-}
-
-/* 驼峰虚影装饰 (纯CSS绘制) */
-.hump-silhouette {
-    position: absolute; bottom: -10%; right: -5%;
-    width: 120%; height: 50%;
-    background: radial-gradient(ellipse at 70% 100%, rgba(0,0,0,0.3) 0%, transparent 60%);
-    z-index: 2; pointer-events: none;
-    transform: rotate(-5deg);
 }
 
 .hero-content {

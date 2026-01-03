@@ -249,12 +249,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* 全局重置与字体 */
-/* 注意：这个页面的设计倾向于暗色模式，
-   即使在亮色模式下也保持深海的幽暗感，
-   只有文字颜色会做微调。
-*/
-
 /* 1. 导航栏：更加通透 */
 .nav-container {
     position: fixed;
